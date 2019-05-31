@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Image Slider</title>
+    <meta name="description" content="image slider with JS" />
+    <meta name="author" content="VisaalPatel" />
+
+    <link rel="stylesheet" href="css/imageSlider.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">This is the header</div>
+
+      <div class="content">
+        <div>
+          <h1>1. Basic Image Gallery</h1>
+          <div class="basic-image-slider">
+            <div class="imageNav" id="leftNav"></div>
+            <div class="selected-image" id="selectedImage">
+              <img src="/images/001.jpg" alt="" />
+            </div>
+            <div class="imageNav" id="rightNav"></div>
+          </div>
+        </div>
+
+        <div>
+          <h1>2. Image Gallery with Thumbnail Selectors</h1>
+          <div class="thumbnail-image-slider">
+            <div class="main-image" id="mainImage">
+              <img src="/images/001.jpg" alt="" />
+            </div>
+            <div class="thumbnails" id="thumbnailContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/imageSlider.js"></script>
+  </body>
+</html>
