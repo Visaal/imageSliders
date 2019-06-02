@@ -31,6 +31,7 @@ body {
   grid-column: 1 / -1;
 }
 
+/* Image Slider 1 */
 .basic-image-slider {
   position: relative;
 }
@@ -55,6 +56,7 @@ body {
   height: 200px;
 }
 
+/* Image Slider 2 */
 .main-image img {
   width: 300px;
 }
@@ -68,4 +70,76 @@ body {
 .thumbnails img {
   width: 90px;
   display: inline-block;
+}
+
+/* Image Slider 3 */
+.carousel-image-slider {
+  position: relative;
+}
+
+.left-container,
+.right-container {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  top: 150px;
+}
+
+.right-container {
+  left: 600px;
+}
+
+.left-container img,
+.right-container img {
+  height: 100px;
+}
+
+.carousel-main-image {
+  /* margin left so left image is not on top of main image */
+  margin-left: 75px;
+  display: inline-block;
+  /* Use positive z index and position: relative to be able to click the thumbs behind */
+  z-index: 2;
+  position: relative;
+}
+
+.carousel-main-image img {
+  width: 600px;
+}
+
+/* Image Slider 4 */
+
+.scrolling-slider {
+  /* display: inline-block; */
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  background-color: red;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.left-image,
+.right-image,
+.slider-main-image {
+  display: inline-block;
+  position: absolute;
+}
+
+.left-image img,
+.right-image img,
+.slider-main-image img {
+  width: 400px;
+}
+
+.slider-main-image {
+  left: 200px;
+}
+
+.left-image {
+  left: -200px;
+}
+
+.right-image {
+  left: 600px;
 }

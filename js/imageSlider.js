@@ -51,11 +51,43 @@ function updateMainImage(imageURL) {
   theImage.src = imageURL;
 }
 
-window.onload = function() {
-  createThumbnails(images);
-};
+// Image Slider 3
+let carouselMainImageIndex = 0;
+let slideRight = document.getElementById("rightContainer");
+let slideLeft = document.getElementById("leftContainer");
+slideRight.addEventListener("click", function() {
+  rotateImges(1);
+});
 
-// let test = document.getElementById("thumbnailContainer");
-// test.addEventListener("click", function() {
-//   console.log(ims[0]);
-// });
+slideLeft.addEventListener("click", function() {
+  rotateImges(-1);
+});
+
+function rotateImges(indexChange) {
+  leftIndex = carouselMainImageIndex - 1;
+  rightIndex = carouselMainImageIndex + 1;
+
+  let leftImage = slideLeft.getElementsByTagName("img")[0];
+  if (images[leftIndex + indexChange]) {
+    leftImage.src = baseUrl + imagesFolder + images[leftIndex + indexChange];
+  } else {
+    leftImage.src = "";
+  }
+
+  let carouselMainContainer = document.getElementById("carouselMainImage");
+  let carouselMainImage = carouselMainContainer.getElementsByTagName("img")[0];
+  carouselMainImage.src =
+    baseUrl + imagesFolder + images[carouselMainImageIndex + indexChange];
+  carouselMainImageIndex += indexChange;
+
+  let rightImage = slideRight.getElementsByTagName("img")[0];
+  if (images[rightIndex + indexChange]) {
+    rightImage.src = baseUrl + imagesFolder + images[rightIndex + indexChange];
+  } else {
+    rightImage.src = "";
+  }
+}
+
+window.onload = function() {
+  createThumbnails(images); // Image Slider 2
+};
